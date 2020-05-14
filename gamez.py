@@ -28,7 +28,7 @@ def start():  #Set up the story and get player name
         print("Bro, yes or no!!! AS IF i'd care about anything else you'd say. Lets start ALL over")
         start() #Makes them start all over again
 
-def part_1():
+def part_1(): 
     print("Now that I know you'll help, Let me tell you whats up. I've been stuck in this computer for years now, and I can't get out. ")
     print("You see, I have this fear of making decisions, one choice that could decide my fate. I need you to make the choices for me. That way my life is in your hands! :))")
     time.sleep(10) #gives people time to read
@@ -53,7 +53,7 @@ def part_1():
         time.sleep(1)
         print('THE END')
 
-def first_left():
+def first_left():   # Two different options and one bad
     print("On no! This is the right way, b-but - there seems to be a bug! And we ran right into it! I forgot theyre seasonal UGHHHHHH")
     time.sleep(3)
     print("Should we...")
@@ -65,21 +65,21 @@ def first_left():
     if decision in option_A:        #Leads to ignite comp
         print("The wires around it seem to be melting! But theres a gap! I'm going thru.")
         ignite_comp()
-    if decision in option_B:        #Deadend
+    elif decision in option_B:        #Deadend
         print("It was a vialient effort, but the big seemed to crush your little companion. All for nothing tsk tsk.")
         time.sleep(1)
         print("GAME OVER")
-    if decision in option_C:        #Leads to 
+    elif decision in option_C:        #Leads to overheating challenge
         print("OK. I phoned Nortan, and hes on his way. I met him years ago while wondering the mainframe. I tried to convince him to escape with me, but hes happy here. Better here than with the wife he says ahahah.")
         time.sleep(5)
         print("There he is! Just the sight of good ol' Nortan sends em running. Something to do with his last name - AnTivrs? Either way he just saved our life!    Lets go further.")
-        # INPUT ANOTHER FUNCTION    
+        over_heat
     else: 
         print("Whoops, musta been the wrong input, don't forget your quotes ;). Give me a second to rewind, don't worry.")
         time.sleep(4)
         first_left()
 
-def first_right():
+def first_right():  #One good option and one bad
     print("Hmmmmm. This definitely isn't the right way, i've never seen those wires. ")
     time.sleep(1)
     print("Should we just keep going or turn back?")
@@ -93,15 +93,14 @@ def first_right():
         time.sleep(5)
         print("... It was a quick death - definitely not clean or pretty - but quick. RIP to the best little unnamed companion you'll ever know.")
         print("THE END")
-    if decision in option_B:   #Going to bypass the bug problem completely and connect to after Nortan's option
+    elif decision in option_B:   #Going to bypass the bug problem completely and connect to overheating challenge
         print("Good call turning back mate! This looks a lot better. Oh and I think we just missed a nasty bug, you see those droppings? Luckily you took us the wrong way or that would have been a dousey. Let's keep going before it comes back.")
         time.sleep(3)
-        # ADD FUNCTION LEADING TO After NORTANS OPTION
+        over_heat()
     else:       #for wrong inputs, starts function over 
         print("I'm confused, there's only two options here... Maybe you didn't hear me correctly")
         time.sleep(2)
         first_right()
-
 
 def ignite_comp():      # Either blows up or sleeps to continue playing the game. 
     print("We made it. I'm glad that worked, you really seem to know what you are doing.")
@@ -116,8 +115,8 @@ def ignite_comp():      # Either blows up or sleeps to continue playing the game
         print("Goodnight!")
         time.sleep(10)
         print("g--goodmorning! The bugfog seems to have cleared during the night, good call on just sleeping! Wish I could solve all my problems like that!")
-        # LEADS TO FUNCTION - myabe Norton's maybe another depending on how much you get done next time
-    if decision in option_B:        # Dead end
+        fork_in_road()
+    elif decision in option_B:        # Dead end
         print("Here let me just flip this...")
         time.sleep(1)
         print("turn this over...")
@@ -134,7 +133,11 @@ def ignite_comp():      # Either blows up or sleeps to continue playing the game
         time.sleep(4)
         print(". And with one little choice, the game is over for you friend")
         print("THE END")
-
+    else:
+        print("I'm confused, there's only two options here... Maybe you didn't hear me correctly")
+        time.sleep(2)
+        print("Lets do that over...")
+        ignite_comp()
 
 
 def over_heat():        # Two ways to lose and two ways to continue 
@@ -165,12 +168,12 @@ def over_heat():        # Two ways to lose and two ways to continue
         print("It seems that they got a little too emotional with all of this drama and had a temper tantrum. I don't think they'll be back soon.")
         print("Probably best if you just left")
         print("Game over :()")
-    if decision in option_B:    # Takes you to next function 
+    elif decision in option_B:    # Takes you to next function 
         print("It's getting hotter and hotter, but I'll keep going if you say so. Man I don't think I've sweat this much since the summer of '09!")
         time.sleep(3)
         print("It's a lot cooler down here, I'm glad we kept going. Hopefully the exit is somewhere around here.")
         fork_in_road() 
-    if decision in option_C:    # Either keeps going or gives player option literallly tells them game over. 
+    elif decision in option_C:    # Either keeps going or gives player option literallly tells them game over. 
         time.sleep(5)
         print("So we've been here for about 5 hours now...")
         print("They don't seem to be slowing down on the gaming,")
@@ -187,6 +190,11 @@ def over_heat():        # Two ways to lose and two ways to continue
             print("I'll keep that in mind for next game, maybe you'll have better luck! ")
             time.sleep(2)
             print("GAMEOVER")
+    else:    # for false inputs, starts them over
+        print("Sorry... I didn't get that. Must have been a problem")
+        print("lets start again")
+        over_heat()
+
 
 def fork_in_road():     # One of the final functions
     time.sleep(3)
@@ -202,14 +210,56 @@ def fork_in_road():     # One of the final functions
         print("It looks like we are in the memory. Don't want to stay here too long, we could get sucked in!")
         print("Quick, lets go into this duct before we are here forever.")
         # ADD FUNCTION
-    if decision in left:        # Takes them to final round!
+    elif decision in left:        # Takes them to final round!
         time.sleep(1)
         print("That was it! I can see the opening through the port!")
         time.sleep(2)
         print("I'm so excited, I can't wait, lets go!!!!")
         final_round()
+    else:  # for false inputs, starts them over
+        print("Not an option :((( sorry )")
+        fork_in_road()
 
-def #Whatever last obstacle is ah 
+
+def locked_in():
+    print("We managed to escape from the memory, but the hatch to the duct isn't opening!")
+    time.sleep(2)
+    print("I guess they repaired these parts, ugh what a shame!")
+    time.sleep(1)
+    print("Okay. I might be able to jimmy the repair and get us out of here but I don't know if they put anti-break software on here.")
+    print("If they did, this could get ugly. What do you think I should do?")
+    time.sleep(5)
+    print("A. Jimmy it")
+    print("B. Call for help again")
+    print("C. cry :( )")
+    decision = input(">")
+    if decision in option_A: # DEAD END
+        print("Okay, I'll go for it.")
+        time.sleep(3)
+        print("Oh no! It was booby trapped! The anti-break software smushed him...")
+        time.sleep(1)
+        print("Rest in peace")
+        time.sleep(1)
+        print("THE END")
+    elif decision in option_B:    # TAKES TO FINAL ROUND
+        print("Okay... I just called Norton and he said he'll disable any traps... ")
+        time.sleep(10)
+        print("Should be good to go....")
+        time.sleep(2)
+        print("Yes! We made it out!")
+        print("And i can see the end! We are almost out of here man!")
+        final_round()
+    elif decision in option_C:    # GOES TO FINAL ROUND 
+        print("Oh! My tears seem to be frying the anti-break!")
+        time.sleep(1)
+        print("I think I'll be able to get through!")
+        time.sleep(2)
+        print('Yes! It worked... and I have no idea how...')
+        print("Oh well, at least we made it! I can see the end...")
+        final_round()
+    else:   # for false inputs, starts them over
+        print("That wasn't an option!!!")
+        locked_in()
 
 def final_round():
     time.sleep(1)
@@ -217,7 +267,7 @@ def final_round():
     print("A. Just go for it, jump out!")
     print("B. Play the safe route and use a rope to go down.")
     decision = input(">")
-    if decision in option_A:    # Still need to work on specifics 
+    if decision in option_A:        # Wins
         print("If you say so, my life is in your hands ...")
         time.sleep(2)
         print("Here i go...")
@@ -225,7 +275,9 @@ def final_round():
         print("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
         time.sleep(10)
         print("HE SURVIVED THE FALL! HE MADE IT OUT! CONGRATS YOU WON THE GAME!!! YOU BEAT ALL ODDS!!!")
-    if decision in option_B:
+        print("With how many way there are to lose this, I am very impressed with you right now!")
+        print("Enjoy life knowing you liberated the little computer guy !!")
+    elif decision in option_B:  # LOses 
         print("Good call, let me wrap my good old rope around this part here and we'll be on our way.")
         time.sleep(3)
         print("I'm going to start my decent!")
@@ -241,3 +293,8 @@ def final_round():
         time.sleep(2)
         print("After all this time... you did so well too... Almost there...")
         print("THE END")
+    else:  # false input (restarts)
+        print("At this point, I have no idea how you are messing up the inputs but I guess we all slip up...")
+        time.sleep(2)
+        print("I'll start you over :) ")
+        final_round()
