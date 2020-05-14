@@ -102,6 +102,7 @@ def first_right():
         time.sleep(2)
         first_right()
 
+
 def ignite_comp():      # Either blows up or sleeps to continue playing the game. 
     print("We made it. I'm glad that worked, you really seem to know what you are doing.")
     time.sleep(3)
@@ -114,6 +115,7 @@ def ignite_comp():      # Either blows up or sleeps to continue playing the game
     if decision in option_A: #Survives! 
         print("Goodnight!")
         time.sleep(10)
+        print("g--goodmorning! The bugfog seems to have cleared during the night, good call on just sleeping! Wish I could solve all my problems like that!")
         # LEADS TO FUNCTION - myabe Norton's maybe another depending on how much you get done next time
     if decision in option_B:        # Dead end
         print("Here let me just flip this...")
@@ -134,4 +136,53 @@ def ignite_comp():      # Either blows up or sleeps to continue playing the game
         print("THE END")
 
 
-def #IDK WHAT TO NAME AFTER NORTON OR WHAT THEY SHOULD DO YET AHH
+def over_heat():        # Two ways to lose and two ways to continue 
+    print("Bugs really are nasty, so be glad thats over. I think it's just a little further. Shouldn't be too bad from now on!")
+    time.sleep(5)
+    print("May have spoke too soon, it's getting hotter in here.")
+    print("That's not good. The owner must be playing games right now, the computer usually overheats. I try to stay near the fans, and strap down so I don't burn but we might be too far now. ")
+    time.sleep(3)
+    print("Should we...")
+    print("A. Turn back and search for the fans. Don't want to risk overheating.")
+    print("B. Keep going, a little sweat doesn't hurt.")
+    print("C. Just wait here and see if the heat wave passes. What are the odds he plays for that long right?")
+    decision = input(">")
+    if decision in option_A:    #Gets lost and loses game
+        print("Okay we'll go back this way...")
+        time.sleep(2)
+        print("Maybe we took this turn")
+        time.sleep(2)
+        print("Or this one...")
+        time.sleep(2)
+        print("I CANT REMEMBER!")
+        time.sleep(1)
+        print("This is useless.")
+        print("I'll never be good enough to find my way out, what would my mom think of me! Oh - ")
+        time.sleep(3)
+        print("-")
+        print("-")
+        print("It seems that they got a little too emotional with all of this drama and had a temper tantrum. I don't think they'll be back soon.")
+        print("Probably best if you just left")
+        print("Game over :()")
+    if decision in option_B:    # Takes you to next function 
+        print("It's getting hotter and hotter, but I'll keep going if you say so. Man I don't think I've sweat this much since the summer of '09!")
+        time.sleep(3)
+        print("It's a lot cooler down here, I'm glad we kept going. Hopefully the exit is somewhere around here.")
+        # ADD FUNCTION HERE YA 
+    if decision in option_C:    # Either keeps going or gives player option literallly tells them game over. 
+        time.sleep(5)
+        print("So we've been here for about 5 hours now...")
+        print("They don't seem to be slowing down on the gaming,")
+        print("and I think someone just delivered some pizza. It's going to be a long night here. I'm not sure we'll make it.")
+        time.sleep(3)
+        print("The poor little guy ended up over heatting and fried all of his brain. Maybe you'll still be able to lead him out.")
+        print("Do you want to keep going? Yes or No?")
+        decision = input(">")
+        if decision in yes:
+            print("Poor little man, looks like a puppet. But I guess we'll keep going")
+            # CONNECT TO OPTION B FUCTION 
+        if decision in no:
+            print("Wise choice, I see you have some humanity.")
+            print("I'll keep that in mind for next game, maybe you'll have better luck! ")
+            time.sleep(2)
+            print("GAMEOVER")
