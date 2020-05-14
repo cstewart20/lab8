@@ -136,6 +136,7 @@ def ignite_comp():      # Either blows up or sleeps to continue playing the game
         print("THE END")
 
 
+
 def over_heat():        # Two ways to lose and two ways to continue 
     print("Bugs really are nasty, so be glad thats over. I think it's just a little further. Shouldn't be too bad from now on!")
     time.sleep(5)
@@ -168,7 +169,7 @@ def over_heat():        # Two ways to lose and two ways to continue
         print("It's getting hotter and hotter, but I'll keep going if you say so. Man I don't think I've sweat this much since the summer of '09!")
         time.sleep(3)
         print("It's a lot cooler down here, I'm glad we kept going. Hopefully the exit is somewhere around here.")
-        # ADD FUNCTION HERE YA 
+        fork_in_road() 
     if decision in option_C:    # Either keeps going or gives player option literallly tells them game over. 
         time.sleep(5)
         print("So we've been here for about 5 hours now...")
@@ -180,9 +181,63 @@ def over_heat():        # Two ways to lose and two ways to continue
         decision = input(">")
         if decision in yes:
             print("Poor little man, looks like a puppet. But I guess we'll keep going")
-            # CONNECT TO OPTION B FUCTION 
+            fork_in_road()
         if decision in no:
             print("Wise choice, I see you have some humanity.")
             print("I'll keep that in mind for next game, maybe you'll have better luck! ")
             time.sleep(2)
             print("GAMEOVER")
+
+def fork_in_road():     # One of the final functions
+    time.sleep(3)
+    print("The air is getting a lot better in here, and there seems to be less and less machine hum.")
+    print("Either I'm going crazy, or we are almost out of here!")
+    time.sleep(5)
+    print("Theres a fork in the road up above. I've never gotten this far before so you're gonna have to choose!")
+    time.sleep(2)
+    print("Should I go left or right...?")
+    decision = input(">")
+    if decision in right:   # Takes them through one more obstacle before final round!! 
+        time.sleep(2)
+        print("It looks like we are in the memory. Don't want to stay here too long, we could get sucked in!")
+        print("Quick, lets go into this duct before we are here forever.")
+        # ADD FUNCTION
+    if decision in left:        # Takes them to final round!
+        time.sleep(1)
+        print("That was it! I can see the opening through the port!")
+        time.sleep(2)
+        print("I'm so excited, I can't wait, lets go!!!!")
+        final_round()
+
+def #Whatever last obstacle is ah 
+
+def final_round():
+    time.sleep(1)
+    print("Do you think I should...")
+    print("A. Just go for it, jump out!")
+    print("B. Play the safe route and use a rope to go down.")
+    decision = input(">")
+    if decision in option_A:    # Still need to work on specifics 
+        print("If you say so, my life is in your hands ...")
+        time.sleep(2)
+        print("Here i go...")
+        time.sleep(2)
+        print("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+        time.sleep(10)
+        print("HE SURVIVED THE FALL! HE MADE IT OUT! CONGRATS YOU WON THE GAME!!! YOU BEAT ALL ODDS!!!")
+    if decision in option_B:
+        print("Good call, let me wrap my good old rope around this part here and we'll be on our way.")
+        time.sleep(3)
+        print("I'm going to start my decent!")
+        time.sleep(5)
+        print("W-whats that noise?!?!")
+        time.sleep(3)
+        print("the rope!")
+        time.sleep(1)
+        print("it's snapping!")
+        print("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+        time.sleep(10)
+        print("He.... he didn't survive the fall...")
+        time.sleep(2)
+        print("After all this time... you did so well too... Almost there...")
+        print("THE END")
